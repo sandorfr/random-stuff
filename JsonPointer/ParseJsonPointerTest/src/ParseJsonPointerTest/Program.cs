@@ -90,7 +90,7 @@ namespace ParseJsonPointerTest
                 {
                     if (sb.Length > 0)
                     {
-                        strings.Append(sb.ToString());
+                        strings.Add(sb.ToString());
                         sb.Length = 0;
                     }
                 }
@@ -122,10 +122,6 @@ namespace ParseJsonPointerTest
             }
 
             return strings.ToArray();
-            return path
-                .Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries)
-                .Select(segment => segment.Replace("~0", "~").Replace("~1", "/"))
-                .ToArray();
         }
     }
 }
